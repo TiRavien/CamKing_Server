@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require('express');
 const app = express()
 const cors = require('cors');
 require('dotenv').config()
@@ -39,8 +39,10 @@ async function run() {
             const id = req.params.id;
             const query = { _id: ObjectId(id) };
             const explores = await camerasCollection.findOne(query);
+            console.log(explores);
             res.json(explores);
         })
+
     }
     finally {
         // await client.close();
